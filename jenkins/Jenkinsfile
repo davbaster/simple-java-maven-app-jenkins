@@ -23,7 +23,7 @@ pipeline {
         }
         stage('Results') {
             steps {
-                publishGherkinResults '**/*OctaneGherkinResults.xml'
+                publishGherkinResults '**/surefire-reports/*.xml'
             }
         }
         stage('Deliver') {
