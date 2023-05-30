@@ -21,6 +21,11 @@ pipeline {
                 }
             }
         }
+        stage('Results') {
+            steps {
+                publishGherkinResults '**/*OctaneGherkinResults.xml'
+            }
+        }
         stage('Deliver') {
             steps {
                 echo 'Delivering ./jenkins/scripts/deliver.sh'
