@@ -1,12 +1,11 @@
 package com.mycompany.app;
 
-import org.junit.jupiter.api.Test;
+import cucumber.api.CucumberOptions;
+import org.junit.runner.RunWith;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-/**
- * Unit test for simple App.
- */
+@RunWith(Cucumber.class)
+@CucumberOptions(plugin="com.hpe.alm.octane.OctaneGherkinFormatter:gherkin-results/ManualRunnerTest_OctaneGherkinResults.xml",
+    features="src/test/resources/feature/manualRunner")
 public class AppTest
 {
     @Test
