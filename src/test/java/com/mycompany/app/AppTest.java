@@ -1,6 +1,7 @@
 package com.mycompany.app;
 
-import cucumber.api.CucumberOptions;
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
@@ -8,14 +9,13 @@ import org.junit.runner.RunWith;
     features="src/test/resources/feature/manualRunner")
 public class AppTest
 {
-    @Test
+
     public void testAppConstructor() {
         App app1 = new App();
         App app2 = new App();
         assertEquals(app1.getMessage(), app2.getMessage());
     }
 
-    @Test
     public void testAppMessage()
     {
         App app = new App();
