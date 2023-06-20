@@ -2,32 +2,55 @@ package com.mycompany.app;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class AppTestSteps {
-    private App app1;
-    private App app2;
     private App app;
-
-    @Given("two app instances")
-    public void two_app_instances() {
-        app1 = new App();
-        app2 = new App();
-    }
-
-    @Then("they should have the same message")
-    public void they_should_have_the_same_message() {
-        assertEquals(app1.getMessage(), app2.getMessage());
-    }
+    private String prefixedMessage;
+    private int characterCount;
+    private String replacedMessage;
 
     @Given("an app instance")
     public void an_app_instance() {
         app = new App();
     }
 
-    @Then("it should return the message {string}")
-    public void it_should_return_the_message(String message) {
+    @Then("the message should be {string}")
+    public void the_message_should_be(String message) {
         assertEquals(message, app.getMessage());
     }
-}
+
+    @Then("the message should be long")
+    public void the_message_should_be_long() {
+        assertTrue(app.isMessageLong());
+    }
+
+    @When("I add the prefix {string} to the message")
+    public void i_add_the_prefix_to_the_message(String prefix) {
+        prefixedMessage = app.getMessageWithPrefix(prefix);
+    }
+
+    @Then("the message should start with {string}")
+    public void the_message_should_start_with(String prefix) {
+        assertTrue(prefixedMessage.startsWith(prefix));
+    }
+
+    @When("I count the character {char} in the message")
+    public void i_count_the_character_in_the_message(char ch) {
+        characterCount = app.getCountOf(ch);
+    }
+
+    @Then("the count should be {int}")
+    public void the_count_should_be(int count) {
+        assertEquals(count, characterCount);
+    }
+
+    @When("I replace {string} with {string} in the message")
+    public void i_replace_with_in_the_message(String oldStr, String newStr) {
+        replacedMessage = app.replaceInMessage(oldStr, newStr);
+    }
+
+    @Then("the message should be {string}")
+    public void the_message_should_be(String message
