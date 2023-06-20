@@ -42,6 +42,7 @@ public class AppTestSteps {
         charCount = app.countCharacter(character.charAt(0));
     }
 
+
     @Then("the count should be {int}")
     public void the_count_should_be(int count) {
         assertEquals(count, characterCount);
