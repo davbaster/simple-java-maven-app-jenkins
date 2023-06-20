@@ -52,8 +52,9 @@ public class AppTestSteps {
         replacedMessage = app.replaceInMessage(oldStr, newStr);
     }
 
-    @Then("the message should be {string}")
-    public void the_message_should_be(String message) {
+    @Then("the replaced message should be {string}")
+    public void the_replaced_message_should_be(String message) {
         assertEquals(message, replacedMessage);
     }
+
 }
