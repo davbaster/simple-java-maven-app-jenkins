@@ -11,6 +11,8 @@ public class AppTestSteps {
     private String prefixedMessage;
     private int characterCount;
     private String replacedMessage;
+    private int charCount;
+
 
     @Given("an app instance")
     public void an_app_instance() {
