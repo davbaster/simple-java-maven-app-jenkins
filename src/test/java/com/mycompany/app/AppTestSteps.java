@@ -53,4 +53,7 @@ public class AppTestSteps {
     }
 
     @Then("the message should be {string}")
-    public void the_message_should_be(String message
+    public void the_message_should_be(String message) {
+        assertEquals(message, replacedMessage);
+    }
+}
