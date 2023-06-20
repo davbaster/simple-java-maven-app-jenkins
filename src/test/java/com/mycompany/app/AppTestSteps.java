@@ -37,9 +37,9 @@ public class AppTestSteps {
         assertTrue(prefixedMessage.startsWith(prefix));
     }
 
-    @When("I count the character {char} in the message")
-    public void i_count_the_character_in_the_message(char ch) {
-        characterCount = app.getCountOf(ch);
+    @When("I count the character {string} in the message")
+    public void i_count_the_character_in_the_message(String character) {
+        charCount = app.countCharacter(character.charAt(0));
     }
 
     @Then("the count should be {int}")
