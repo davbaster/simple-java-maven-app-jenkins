@@ -15,7 +15,7 @@ Feature: App Testing
 
   Scenario: Test count of character in message
     Given an app instance
-    When I count the character 'o' in the message
+    When I count the character "o" in the message
     Then the count should be 2
 
   Scenario: Test replace in message
