@@ -29,5 +29,16 @@ public class App
     public String replaceInMessage(String oldStr, String newStr) {
         return this.message.replace(oldStr, newStr);
     }
+
+    public int countCharacter(char c) {
+    int count = 0;
+    for (char character : this.message.toCharArray()) {
+        if (character == c) {
+            count++;
+        }
+    }
+    return count;
+}
+
 }
 
