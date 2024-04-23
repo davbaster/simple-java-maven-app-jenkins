@@ -13,7 +13,8 @@ pipeline {
         }
         stage('Results') {
             steps {
-                publishGherkinResults '**/*OctaneGherkinResults.xml'
+                //publishGherkinResults '**/*OctaneGherkinResults.xml'
+                junit '**/*.xml'
             }
         }
         stage('Deliver') {
